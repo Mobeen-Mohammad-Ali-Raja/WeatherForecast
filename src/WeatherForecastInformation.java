@@ -39,7 +39,7 @@ public class WeatherForecastInformation{
     private static JSONObject getLocationInformation (String city){
         city = city.replaceAll(" ","+"); // replacing white spaces with "+" as links do not allow for white spaces
 
-        String urlString = "https://geocoding-api.open-meteo.com/v1/search?name=tokyo&count=1&language=en&format=json" + // Geocoding API URL
+        String urlString = "https://geocoding-api.open-meteo.com/v1/search?name=" + // Geocoding API URL
                 city + // adding city to the url
                 "&count=1&language=end&format=json"; // this string is needed for choosing the settings we want from Geocoding API where we filter how we want the information
 
@@ -124,7 +124,7 @@ public class WeatherForecastInformation{
             // Weather Forecast API URL
             String url = "https://api.open-meteo.com/v1/forecast?latitude="
                             + latitude +
-                        "&longitude=" + longitude + "&current=temperature_2m,relative_humidity_2m,wind_speed_10m";
+                        "&longitude=" + longitude + "&current=temperature_2m,relative_humidity_2m,wind_speed_10m,is_day,precipitation,rain";
             HttpURLConnection apiConnection = getApiResponse(url);
 
             // checking for response status | a value of 200 means the connection was successful
@@ -154,6 +154,14 @@ public class WeatherForecastInformation{
             long relativeHumidity = (long) currentWeatherJsonObject.get("relative_humidity_2m");
             System.out.println("Relative humditity: " + relativeHumidity);
 
+            double precipitation = (double) currentWeatherJsonObject.get("precipitation");
+            System.out.println("Precipitation: " + precipitation);
+
+            long isDay = (long) currentWeatherJsonObject.get("is_day");
+            System.out.println(isDay == 1 ? "It is currently Daytime" : "It is currently Nighttime"); // added a short if statement to print out  if it's day time or not depending on the value of "isDay"
+
+            double rain = (double) currentWeatherJsonObject.get("rain");
+            System.out.println("Rain: " + rain);
 
         } catch (Exception e){
             e.printStackTrace();
