@@ -158,7 +158,7 @@ public class WeatherForecastInformation{
         } catch (Exception e){
             e.printStackTrace();
         }
-        return;
+
     }
 
 
