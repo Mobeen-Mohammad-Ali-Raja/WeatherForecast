@@ -14,7 +14,7 @@ public class WeatherForecastInformation{
             do{
                 // Retrieve city name from user
                 System.out.println("___________________________________________________________");
-                System.out.print("Enter the city name or \"X\" to exit: ");
+                System.out.print("Enter a city name or \"X\" to exit: ");
                 city = scanner.nextLine();
 
                 // Checking to see if program should exit
@@ -141,7 +141,10 @@ public class WeatherForecastInformation{
             JSONObject resultJsonObject = (JSONObject) parser.parse(jsonResponse);
             JSONObject currentWeatherJsonObject = (JSONObject) resultJsonObject.get("current");
 
-            // storing the information into their corresponding data types
+            // storing the information into their corresponding data types and printing them
+
+            System.out.println("___________________________________________________________");
+
             String time = (String) currentWeatherJsonObject.get("time");
             System.out.println("Current time: " + time);
 
