@@ -145,24 +145,31 @@ public class WeatherForecastInformation{
 
             System.out.println("___________________________________________________________");
 
+            // Retrieving time data and displaying it
             String time = (String) currentWeatherJsonObject.get("time");
             System.out.println("Current time: " + time);
 
+            // Retrieving temperature data and displaying it
             double temperature = (double) currentWeatherJsonObject.get("temperature_2m");
             System.out.println("Temperature: " + temperature);
 
+            // Retrieving wind speed data and displaying it
             double windSpeed = (double) currentWeatherJsonObject.get("wind_speed_10m");
             System.out.println("Wind description: " + windSpeed);
 
+            // Retrieving relative humidity data and displaying it
             long relativeHumidity = (long) currentWeatherJsonObject.get("relative_humidity_2m");
-            System.out.println("Relative humditity: " + relativeHumidity);
+            System.out.println("Relative humidity: " + relativeHumidity);
 
+            // Retrieving precipitation data and displaying it
             double precipitation = (double) currentWeatherJsonObject.get("precipitation");
             System.out.println("Precipitation: " + precipitation);
 
+            // Retrieving day/nighttime data and displaying it
             long isDay = (long) currentWeatherJsonObject.get("is_day");
             System.out.println(isDay == 1 ? "It is currently Daytime" : "It is currently Nighttime"); // added a short if statement to print out  if it's day time or not depending on the value of "isDay"
 
+            // Retrieving rain data and displaying it
             double rain = (double) currentWeatherJsonObject.get("rain");
             System.out.println("Rain: " + rain);
 
