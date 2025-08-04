@@ -1,7 +1,7 @@
 
 # **Project Title:** WeatherForecast
 
-This project aims to forecast weather of cities, and display them using API's reference calls from two different references, retrieving longitude and latitude information from one call to use that to retrieve information through another call to display general information about the city chosen, such as whether it is daytime or nightime, humidity, rain etc.
+This project aims to forecast weather of cities, and display them using API's reference calls from two different references, retrieving longitude and latitude information from one call to use that to retrieve information through another call to display general information about the city chosen, such as whether it is daytime or nighttime, humidity, rain etc.
 
 
 ## **References**
